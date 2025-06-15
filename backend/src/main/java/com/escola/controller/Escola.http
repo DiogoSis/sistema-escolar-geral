@@ -1,0 +1,20 @@
+# curl --location -X POST 'http://localhost:8080/api/v1/alunos'
+#--header 'Content-Type: application/json'
+#--data '{
+#    "primeiroNome": "Ana",
+#    "ultimoNome": "Lima",
+#    "dataNascimento": "20/05/2012",
+#    "matricula": "2025003"
+#}'
+POST http://localhost:8080/api/v1/alunos
+Content-Type: application/json
+
+{
+  "primeiroNome": "Ana",
+  "ultimoNome": "Lima",
+  "dataNascimento": "20/05/2012",
+  "matricula": "2025003"
+}
+
+###
+

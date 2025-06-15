@@ -1,0 +1,70 @@
+# Sistema Escola - Root .gitignore
+
+# Ignore IDE/editor folders
+.idea/
+.vscode/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore build output and dependency folders
+/build/
+dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+target/
+out/
+
+# Ignore Maven wrapper files
+.mvn/
+mvnw.cmd
+mvnw
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore IntelliJ project files
+*.iml
+*.ipr
+*.iws
+
+# Ignore NetBeans project files
+/nbproject/private/
+/nbproject/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Ignore JetBrains Rider files
+.idea/
+
+# Ignore STS (Spring Tool Suite) files
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# Ignore local environment files
+.env
+*.env
+
+# Ignore HTTP Client requests
+httpRequests/
+
+# Ignore Maven home manager config
+mavenHomeManager.xml
+
+# Ignore data source configs
+dataSources/
+dataSources.local.xml
+
+# Ignore shelf and workspace files (IDEA)
+shelf/
+workspace.xml

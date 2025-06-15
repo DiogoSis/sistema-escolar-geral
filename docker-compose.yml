@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: escola-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin_escola
+      POSTGRES_PASSWORD: banco123
+      POSTGRES_DB: sistema_escola_db
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+  backend:
+    container_name: escola-backend
+    build:
+      context: ./backend 
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/sistema_escola_db
+      - SPRING_DATASOURCE_USERNAME=admin_escola
+      - SPRING_DATASOURCE_PASSWORD=banco123
+    depends_on:
+      - db
+
+  # frontend:
+  #   container_name: escola-frontend
+  #   build:
+  #     context: ./frontend
+  #   restart: always
+  #   ports:
+  #     - "3000:80"
+  #   depends_on:
+  #     - backend
+
+volumes:
+  postgres_data:
