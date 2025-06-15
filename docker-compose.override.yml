@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./backend:/app
+      - ~/.m2:/root/.m2
+
+# O Docker Compose é inteligente. 
+# Quando você executa docker compose up, 
+# ele automaticamente lê o docker-compose.yml e, 
+# se encontrar um docker-compose.override.yml, 
+# ele mescla as duas configurações. 
+# As configurações no arquivo de override têm prioridade, 
+# permitindo que a gente mude o build e adicione 
+# volumes apenas para o nosso ambiente de desenvolvimento.
